@@ -39,6 +39,10 @@ public class ViewRole1Home {
 	protected static Label label_PageTitle = new Label();
 	protected static Label label_UserDetails = new Label();
 	protected static Button button_UpdateThisUser = new Button("Account Update");
+
+	protected static Button button_LessonsLearned =
+	    new Button("Lessons Learned");
+
 	
 	/* separator and it is used to partition the GUI for various tasks */
 	protected static Line line_Separator1 = new Line(20, 95, width-20, 95);
@@ -142,7 +146,14 @@ public class ViewRole1Home {
 		
 		// GUI Area 2
 		
-			// This is a stub, so this area is empty
+		
+		setupButtonUI(button_LessonsLearned, "Dialog", 18,
+		              220, Pos.CENTER, 20, 130);
+		
+		button_LessonsLearned.setOnAction(e -> {
+		    ViewLessonsLearned.display(theStage, theUser);
+		});
+
 		
 		
 		// GUI Area 3
@@ -154,10 +165,18 @@ public class ViewRole1Home {
 
 		// This is the end of the GUI initialization code
 		
-		// Place all of the widget items into the Root Pane's list of children
-         theRootPane.getChildren().addAll(
-			label_PageTitle, label_UserDetails, button_UpdateThisUser, line_Separator1,
-	        line_Separator4, button_Logout, button_Quit);
+
+		theRootPane.getChildren().addAll(
+		    label_PageTitle,
+		    label_UserDetails,
+		    button_UpdateThisUser,
+		    line_Separator1,
+		    button_LessonsLearned,
+		    line_Separator4,
+		    button_Logout,
+		    button_Quit
+		);
+
 }
 	
 	/**********
